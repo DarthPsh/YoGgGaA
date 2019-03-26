@@ -1866,7 +1866,7 @@ module.exports = myTabs;
 
 function myTimer() {
   // ТАЙМЕР
-  var deadline = "2019-03-31";
+  var deadline = "2019-03-31 GMT+0300";
 
   function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date()),
@@ -1895,6 +1895,7 @@ function myTimer() {
       hours.textContent = t.hours;
       minutes.textContent = t.minutes;
       seconds.textContent = t.seconds;
+      if (t.hours < 10) hours.textContent = "0" + t.hours;
       if (t.minutes < 10) minutes.textContent = "0" + t.minutes;
       if (t.seconds < 10) seconds.textContent = "0" + t.seconds;
 
